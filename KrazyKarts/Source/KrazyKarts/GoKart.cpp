@@ -32,7 +32,13 @@ void AGoKart::Tick(float DeltaTime)
 
 	FVector Translation = Velocity * 100 * DeltaTime;
 
-	AddActorWorldOffset(Translation);
+	FHitResult Hit;
+	AddActorWorldOffset(Translation, true, &Hit);
+
+	if (Hit.IsValidBlockingHit())
+	{
+		Velocity = FVector::ZeroVector;
+	}
 
 }
 
