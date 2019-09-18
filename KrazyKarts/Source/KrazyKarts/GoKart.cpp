@@ -30,6 +30,12 @@ void AGoKart::Tick(float DeltaTime)
 
 	Velocity = Velocity + Acceleration * DeltaTime;
 
+	UpdateLocationFromVelocity(DeltaTime);
+
+}
+
+void AGoKart::UpdateLocationFromVelocity(float DeltaTime) {
+
 	FVector Translation = Velocity * 100 * DeltaTime;
 
 	FHitResult Hit;
