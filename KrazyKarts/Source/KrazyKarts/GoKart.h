@@ -38,9 +38,16 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxDrivingForce = 10000;
 
+	// Number of degrees rotated per second at full control throw (degrees/s).
+	UPROPERTY(EditAnywhere)
+	float MaxDegreesPerSecond = 90;
+
 	void MoveForward(float Value);
+
+	void MoveRight(float Value);
 
 	FVector Velocity;
 
 	float Throttle;
+	float SteeringThrow;
 };
