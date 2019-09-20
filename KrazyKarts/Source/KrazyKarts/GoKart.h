@@ -28,6 +28,8 @@ public:
 
 private:
 
+	void ApplyRotation(float DeltaTime);
+
 	void UpdateLocationFromVelocity(float DeltaTime);
 
 	// Mass of the car (kg).
