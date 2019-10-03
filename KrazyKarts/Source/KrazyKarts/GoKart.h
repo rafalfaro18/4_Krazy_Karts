@@ -57,7 +57,8 @@ private:
 	UFUNCTION (Server, Reliable, WithValidation)
 	void Server_MoveForward(float Value);
 
-	void MoveRight(float Value);
+	UFUNCTION(Server, Reliable, WithValidation)
+	void Server_MoveRight(float Value);
 
 	FVector Velocity;
 

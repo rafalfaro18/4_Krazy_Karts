@@ -83,7 +83,7 @@ void AGoKart::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AGoKart::Server_MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AGoKart::MoveRight);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AGoKart::Server_MoveRight);
 
 }
 
@@ -95,7 +95,12 @@ bool AGoKart::Server_MoveForward_Validate(float Value) {
 	return true;
 }
 
-void AGoKart::MoveRight(float Value) {
+void AGoKart::Server_MoveRight_Implementation(float Value) {
 	SteeringThrow = Value;
 }
+
+bool AGoKart::Server_MoveRight_Validate(float Value) {
+	return true;
+}
+
 
