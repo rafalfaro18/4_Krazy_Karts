@@ -54,10 +54,10 @@ private:
 	UPROPERTY(EditAnywhere)
 	float RollingResistanceCoefficient = 0.015; // car tires on concrete.
 
-	UFUNCTION (Server, Reliable, WithValidation)
+	UFUNCTION (Server, Reliable, WithValidation) // RPC
 	void Server_MoveForward(float Value);
 
-	UFUNCTION(Server, Reliable, WithValidation)
+	UFUNCTION(Server, Reliable, WithValidation) // RPC
 	void Server_MoveRight(float Value);
 
 	FVector Velocity;
