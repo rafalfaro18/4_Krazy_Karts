@@ -92,7 +92,7 @@ void AGoKart::Server_MoveForward_Implementation(float Value) {
 }
 
 bool AGoKart::Server_MoveForward_Validate(float Value) {
-	return true;
+	return FMath::Abs(Value) <= 1;
 }
 
 void AGoKart::Server_MoveRight_Implementation(float Value) {
@@ -100,7 +100,7 @@ void AGoKart::Server_MoveRight_Implementation(float Value) {
 }
 
 bool AGoKart::Server_MoveRight_Validate(float Value) {
-	return true;
+	return FMath::Abs(Value) <= 1;
 }
 
 
