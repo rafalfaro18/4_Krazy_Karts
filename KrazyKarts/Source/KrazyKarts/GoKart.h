@@ -54,6 +54,9 @@ private:
 	UPROPERTY(EditAnywhere)
 	float RollingResistanceCoefficient = 0.015; // car tires on concrete.
 
+	void MoveForward(float Value);
+	void MoveRight(float Value);
+
 	UFUNCTION (Server, Reliable, WithValidation) // RPC
 	void Server_MoveForward(float Value);
 

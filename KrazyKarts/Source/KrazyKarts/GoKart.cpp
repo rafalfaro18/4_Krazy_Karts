@@ -101,9 +101,21 @@ void AGoKart::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &AGoKart::Server_MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AGoKart::Server_MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AGoKart::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AGoKart::MoveRight);
+	//PlayerInputComponent->BindAxis("MoveForward", this, &AGoKart::Server_MoveForward);
+	//PlayerInputComponent->BindAxis("MoveRight", this, &AGoKart::Server_MoveRight);
 
+}
+
+void AGoKart::MoveForward(float Value) {
+	Throttle = Value;
+	Server_MoveForward(Value);
+}
+
+void AGoKart::MoveRight(float Value) {
+	SteeringThrow = Value;
+	Server_MoveRight(Value);
 }
 
 void AGoKart::Server_MoveForward_Implementation(float Value) {
@@ -121,5 +133,3 @@ void AGoKart::Server_MoveRight_Implementation(float Value) {
 bool AGoKart::Server_MoveRight_Validate(float Value) {
 	return FMath::Abs(Value) <= 1;
 }
-
-
