@@ -24,7 +24,7 @@ void AGoKart::BeginPlay()
 
 void AGoKart::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps); // Fixes wrong Role
 	DOREPLIFETIME(AGoKart, ReplicatedLocation);
 	DOREPLIFETIME(AGoKart, ReplicatedRotation);
 }
