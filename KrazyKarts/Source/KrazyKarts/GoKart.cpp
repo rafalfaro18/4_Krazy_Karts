@@ -31,6 +31,9 @@ void AGoKart::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifeti
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps); // Fixes wrong Role
 	DOREPLIFETIME(AGoKart, ReplicatedTranform);
+	DOREPLIFETIME(AGoKart, Velocity);
+	DOREPLIFETIME(AGoKart, Throttle);
+	DOREPLIFETIME(AGoKart, SteeringThrow);
 }
 
 FString GetEnumText(ENetRole Role)
