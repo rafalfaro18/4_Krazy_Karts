@@ -17,9 +17,9 @@ struct FGoKartMove
 	float SteeringThrow;
 
 	UPROPERTY()
-		float DeltaTime;
+	float DeltaTime;
 	UPROPERTY()
-		float Time;
+	float Time;
 };
 
 
@@ -32,10 +32,10 @@ struct FGoKartState
 	FTransform Tranform;
 
 	UPROPERTY()
-		FVector Velocity;
+	FVector Velocity;
 
 	UPROPERTY()
-		FGoKartMove LastMove;
+	FGoKartMove LastMove;
 };
 
 UCLASS()
