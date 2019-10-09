@@ -11,10 +11,10 @@ struct FGoKartMove
 {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY()
-		float Throttle;
 	UPROPERTY()
-		float SteeringThrow;
+	float Throttle;
+	UPROPERTY()
+	float SteeringThrow;
 
 	UPROPERTY()
 		float DeltaTime;
@@ -28,8 +28,8 @@ struct FGoKartState
 {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY()
-		FTransform Tranform;
+	UPROPERTY()
+	FTransform Tranform;
 
 	UPROPERTY()
 		FVector Velocity;
