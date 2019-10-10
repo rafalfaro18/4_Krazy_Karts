@@ -90,19 +90,15 @@ private:
 	void MoveRight(float Value);
 
 	UFUNCTION (Server, Reliable, WithValidation) // RPC
-	void Server_MoveForward(float Value);
+	void Server_SendMove(FGoKartMove Move);
 
-	UFUNCTION(Server, Reliable, WithValidation) // RPC
-	void Server_MoveRight(float Value);
+	UPROPERTY(ReplicatedUsing = OnRep_ServerState)
+	FGoKartState ServerState;
 
-	UPROPERTY(Replicated)
 	FVector Velocity;
 
-	UPROPERTY(ReplicatedUsing = OnRep_ReplicatedTranform)
-	FTransform ReplicatedTranform;
-
 	UFUNCTION()
-	void OnRep_ReplicatedTranform();
+	void OnRep_ServerState();
 
 	UPROPERTY(Replicated)
 	float Throttle;
