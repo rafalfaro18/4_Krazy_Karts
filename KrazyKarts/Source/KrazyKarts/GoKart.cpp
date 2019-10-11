@@ -59,7 +59,7 @@ void AGoKart::Tick(float DeltaTime)
 	{
 		FGoKartMove Move = CreateMove(DeltaTime);
 
-		if (!HasAuthority()) {
+		if (!HasAuthority()) { // Is Client
 			UnacknowledgedMoves.Add(Move);
 
 			UE_LOG(LogTemp, Warning, TEXT("Queue length: %d"), UnacknowledgedMoves.Num());
