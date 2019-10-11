@@ -86,7 +86,7 @@ void AGoKart::OnRep_ServerState()
 	}
 }
 
-void AGoKart::SimulateMove(const FGoKartMove& Move)
+void AGoKart::SimulateMove(const FGoKartMove& Move) // Reference because we're not changing it.
 {
 	FVector Force = GetActorForwardVector() * MaxDrivingForce * Move.Throttle;
 
