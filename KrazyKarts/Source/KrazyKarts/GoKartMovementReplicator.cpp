@@ -64,7 +64,7 @@ void UGoKartMovementReplicator::ClientTick(float DeltaTime)
 {
 	ClientTimeSinceUpdate += DeltaTime;
 
-	if (ClientTimeBetweenLastUpdates < KINDA_SMALL_NUMBER) return;
+	if (ClientTimeBetweenLastUpdates < KINDA_SMALL_NUMBER) return; // Ignore very small floating numbers
 
 	FVector TargetLocation = ServerState.Tranform.GetLocation();
 	float LerpRatio = ClientTimeSinceUpdate / ClientTimeBetweenLastUpdates;
