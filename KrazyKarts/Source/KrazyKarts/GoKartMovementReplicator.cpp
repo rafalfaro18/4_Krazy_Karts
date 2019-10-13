@@ -4,6 +4,7 @@
 #include "GoKartMovementReplicator.h"
 #include "UnrealNetwork.h"
 #include "GameFramework/Actor.h"
+#include "Engine/World.h"
 
 // Sets default values for this component's properties
 UGoKartMovementReplicator::UGoKartMovementReplicator()
