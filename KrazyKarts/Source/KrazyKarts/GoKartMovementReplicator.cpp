@@ -70,7 +70,7 @@ void UGoKartMovementReplicator::ClientTick(float DeltaTime)
 	FVector TargetLocation = ServerState.Tranform.GetLocation();
 	float LerpRatio = ClientTimeSinceUpdate / ClientTimeBetweenLastUpdates;
 	FVector StartLocation = ClientStartTransform.GetLocation();
-	float VelocityToDerivative = ClientTimeBetweenLastUpdates * 100;
+	float VelocityToDerivative = ClientTimeBetweenLastUpdates * 100; // centimeters
 	FVector StartDerivative = ClientStartVelocity * VelocityToDerivative;
 	FVector TargetDerivative = ServerState.Velocity * VelocityToDerivative;
 
