@@ -22,7 +22,7 @@ struct FGoKartState
 	FGoKartMove LastMove;
 };
 
-struct FHermiteCubicSpline
+struct FHermiteCubicSpline // No need to ustruct because it's not replicated.
 {
 	FVector StartLocation, StartDerivative, TargetLocation, TargetDerivative;
 
