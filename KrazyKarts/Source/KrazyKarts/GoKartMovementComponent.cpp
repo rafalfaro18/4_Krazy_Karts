@@ -60,7 +60,7 @@ FGoKartMove UGoKartMovementComponent::CreateMove(float DeltaTime)
 	Move.DeltaTime = DeltaTime;
 	Move.SteeringThrow = SteeringThrow;
 	Move.Throttle = Throttle;
-	Move.Time = GetWorld()->TimeSeconds;
+	Move.Time = GetWorld()->TimeSeconds; // TODO: Change for GetGameState()->GetServerWorldTimeSeconds to sync client & server.
 
 	return Move;
 }
