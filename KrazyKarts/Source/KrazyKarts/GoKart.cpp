@@ -25,7 +25,7 @@ void AGoKart::BeginPlay()
 
 	if (HasAuthority())
 	{
-		NetUpdateFrequency = 1;
+		NetUpdateFrequency = 1; // Set to 10 to replicate more frequently. 1 is for simulated lag.
 	}
 	
 }
